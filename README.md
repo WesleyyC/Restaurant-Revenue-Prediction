@@ -1,7 +1,9 @@
 # RestaurantRevenuePrediction
-Term project for COSI 123A Statistical Machine Learning Course @ Brandeis Univeristy
+Term project for COSI 123A Statistical Machine Learning Course @ Brandeis Univeristy 
 
-Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian
+https://www.kaggle.com/c/restaurant-revenue-prediction/data 
+
+Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian 
 
 
 ### Update README.md for each commit
