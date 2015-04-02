@@ -16,10 +16,12 @@ Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian
 ### Approach Records
 
 1st
-- Approach:
-- Score:
-- File:
-- Name/Date
+- Approach: Linear Regression with standardized Data and regression tree on the data the training data that Wesley cleaned
+- didn't label any of the variables as categorical and used first 120 rows as training partition and last 17 rows as testing 
+- partitition.  Note that I didn't adjust any parameters of the model, as I just wanted to get a baseline score for how this -data performs out of the box- clearly a very hard dataset to work with!
+- Score: 2757036.58 RMSE for linear regression and 3364990.53 RMSE for regression tree.  
+- File: linearRegression_RegressionTree_20150402
+- Name/Date: Will
 
 ### Data Description
 #### File Description
