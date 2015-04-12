@@ -10,10 +10,10 @@ test_data=csvread('str_num_test.csv',1,0);
 %% Load XY
 Y = raw_data(:,43);
 X = raw_data(:,3:42);
-X=zscore(X);
+%X=zscore(X);
 
 X_t = test_data(:,3:42);
-X_t =zscore(X_t);
+%X_t =zscore(X_t);
 
 
 
