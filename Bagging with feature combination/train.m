@@ -1,3 +1,7 @@
+%% Bagging with combination
+
+clear
+
 %% Data Read
 filename6Train = 'str_num_train.csv';
 data = csvread(filename6Train,1,0);
@@ -6,30 +10,41 @@ trainRevenue = data(:,end);
 
 
 %% Bagging
-NLearn = 500;
+NLearn = 100;
 kfold = 10;
-min = Inf;
-vec = [];
-bestModel = [];
-for b = 2
-    % creating combination
-    M = 0:ones(1,b)*pow2(b-1:-1:0)';
-    z = rem(floor(M(:)*pow2(1-b:0)),2);
-    out = z(sum(z,2) == b,:);
+
+% combination base
+N_features = 41;
+base=1:N_features;
+loop_Start = 39;
+loop_End=41;
+% compare record
+err=zeros(1,loop_End-loop_Start+1);
+
+%%
+for n = loop_Start:loop_End
+    % set min
+    min = Inf;  
+    % creating combinations
+    C = nchoosek(base,n);
     
-    for i = 1:size(out,1)
-        logVec = out(i,:);
-        catIndexVec = find(logVec == 1);
-        predictor = fitensemble(trainFeatures, trainRevenue,  ...
-            'Bag', NLearn, 'Tree', 'Type', 'Regression','CategoricalPredictors', catIndexVec,'CrossVal','On','KFold', kfold);
-        mse = kfoldLoss(predictor)
+    for i = 1:length(C(:,1))
+        
+        predictor = fitensemble(x2fx(trainFeatures(:,C(i,:)),'interaction'), trainRevenue,  ...
+        'Bag', NLearn, 'Tree', 'Type', 'Regression');
+        CVensembler = crossval(predictor, 'KFold', kfold);
+        mse = sqrt(kfoldLoss(CVensembler))
         if mse < min
+            err(n-loop_Start+1) = mse;
+            vec(n-loop_Start+1,:) = C(i,:);
             min = mse;
-            vec = catIndexVec;
-            bestModel = predictor;
         end
     end
     
     
 end
+
+%%
+predictor_apply = fitensemble(x2fx(trainFeatures(:,C(i,:)),'interaction'), trainRevenue,  ...
+'Bag', NLearn, 'Tree', 'Type', 'Regression');
 
