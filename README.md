@@ -39,6 +39,20 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: termProjScript_20150402
 - Name/Date: Will 4/12/15
 
+4th
+- Approach: bagging with combination of features, but it doesn't seem to work and it should be since if one parameter is not useful, the bagging will simply move tuning the parameter to 0.
+- But feature categorical approach should work.
+- Score: so far the quadratic term has worked best with ~1460000 RMSE on the test partition and RMSE of ~2000000 on Kaggle  
+- File: ./Bagging with Feature Combination/train.m
+- Name/Date: Wes 4/12/15
+
+5th
+- Approach: convert the problem to a classify probelm and use fitctree to do classify.
+- Does not work very well. So I would use fitensemble to do classify.
+- Score: so far the quadratic term has worked best with ~90000 RMSE on the test partition and RMSE of ~2400000 on Kaggle  
+- File: ./Classify Approach/train.m
+- Name/Date: Wes 4/12/15
+
 
 ### Data Description
 #### File Description
