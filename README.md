@@ -75,7 +75,7 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - Score: RMSE of ~1.8 M on Kaggle
 - File: ./City Cluster/train.m
 - Name/Date: Wes 4/13/15
-- 
+
 
 ### Data Description
 #### File Description
