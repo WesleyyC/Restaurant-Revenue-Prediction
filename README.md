@@ -53,6 +53,29 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Classify Approach/train.m
 - Name/Date: Wes 4/12/15
 
+6th
+- Approach: convert the problem to a classify probelm and use fitensemble to classify.
+- It seems working better than fitctree, but still not good enough.
+- Score: so far the quadratic term has worked best with ~1.60000 RMSE on the test partition and RMSE of ~1.900000 on Kaggle  
+- File: ./Classify Fitensemble/train.m
+- Name/Date: Wes 4/13/15
+
+7th
+- Approach: bagging with linear x2fx and fresample of 0.5
+- Bagging seems to be the best approach while working with x2fx, which makes me suspect that if there is something we can do to expand the dimension.
+- Moreover, we can start use this approach to deal with seperate case, like big city vs other city.
+- Score: so far the quadratic term has worked best with ~2.40000 RMSE on the test partition and RMSE of 1707777.01698 on Kaggle
+- File: ./Will Continue/train.m
+- Name/Date: Wes 4/13/15
+
+8th
+- Approach: cluster city and do two bagging for big city/other city
+- The problem for this apprach is the training sample gets much smaller after seperating cases.
+- The RMSE for other city is about ~0.9 M while for big city is about ~9 M, so maybe we can use the result for other city and use the big city result from 7th approach.
+- Score: RMSE of ~1.8 M on Kaggle
+- File: ./City Cluster/train.m
+- Name/Date: Wes 4/13/15
+
 
 ### Data Description
 #### File Description
