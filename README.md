@@ -68,6 +68,15 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Will Continue/train.m
 - Name/Date: Wes 4/13/15
 
+8th
+- Approach: cluster city and do two bagging for big city/other city
+- The problem for this apprach is the training sample gets much smaller after seperating cases.
+- The RMSE for other city is about ~0.9 M while for big city is about ~9 M, so maybe we can use the result for other city and use the big city result from 7th approach.
+- Score: RMSE of ~1.8 M on Kaggle
+- File: ./City Cluster/train.m
+- Name/Date: Wes 4/13/15
+- 
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
