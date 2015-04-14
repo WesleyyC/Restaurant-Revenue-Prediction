@@ -78,10 +78,15 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 
 9th
 - Approach: Combine the result from citycluster(train0) and and will continue(train1).
-- Score: RMSE of 1732591.32258 on Kaggle under name kingjim which is slightly better than Kaggle.
+- Score: RMSE of 1732591.32258 on Kaggle under name kingjim.
 - File: ./Combine City and Will/train.m
 - Name/Date: Wes 4/14/15
 
+10th
+- Approach: Basically inherit the will continue training model but set the outliner revunue (>1.2e7) to 1.2e7 and retrain again.
+- Score: RMSE of 1700507.32258 on Kaggle under name kingjim.
+- File: ./Get Rid of Outline/train.m
+- Name/Date: Wes 4/14/15
 
 ### Data Description
 #### File Description
