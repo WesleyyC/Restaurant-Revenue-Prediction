@@ -76,6 +76,12 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./City Cluster/train.m
 - Name/Date: Wes 4/13/15
 
+8th
+- Approach: Combine the result from citycluster(train0) and and will continue(train1).
+- Score: RMSE of 1732591.32258 on Kaggle under name kingjim which is slightly better than Kaggle.
+- File: ./Combine City and Will/train.m
+- Name/Date: Wes 4/14/15
+
 
 ### Data Description
 #### File Description
