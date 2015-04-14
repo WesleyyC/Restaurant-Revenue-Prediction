@@ -60,7 +60,7 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Classify Fitensemble/train.m
 - Name/Date: Wes 4/13/15
 
-6th
+7th
 - Approach: bagging with linear x2fx and fresample of 0.5
 - Bagging seems to be the best approach while working with x2fx, which makes me suspect that if there is something we can do to expand the dimension.
 - Moreover, we can start use this approach to deal with seperate case, like big city vs other city.
