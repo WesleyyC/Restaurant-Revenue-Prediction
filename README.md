@@ -115,7 +115,7 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 
 14th
 - Support Vector approach, libvim linbrary, using linaer kenal
-- Did not tune any varaible.
+- Try several tunning option, the score is not very impressive. Might move on and try something else.
 - Score: RMSE of ~1.8M on Kaggle.
 - File: ./SVM/train.m
 - Name/Date: Wes 4/15/15
