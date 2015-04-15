@@ -92,6 +92,27 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Get Rid of Outline/train.m
 - Name/Date: Wes 4/14/15
 
+11th
+- Approach: cluster city and do two bagging for big city/other city.
+- Different from approach 8, this time I set boundary for outliner revenue
+- The RMSE for other city is about ~0.9 M while for big city now is only about ~6 M.
+- Score: RMSE of ~1.77 M on Kaggle, which is not bad, but still can be improved. So making we can look into other features.
+- File: ./City Cluster Continue/train.m
+- Name/Date: Wes 4/14/15
+
+12th
+- Approach: Basically inherit the will continue training model but set the outliner revunue (>1e7) to 1e7 and retrain again.
+- Basically I only change the threshold
+- Score: RMSE of 1691707 on Kaggle.
+- File: ./Get Rid of Outline Continue/train.m
+- Name/Date: Wes 4/14/15
+
+13th
+- Continue from 12, I go one step further and change the threshold to 0.95e7
+- Score: RMSE of 1698759 on Kaggle, which is close to 12.
+- File: ./Get Rid of Outline Continue/train.m
+- Name/Date: Wes 4/14/15
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
