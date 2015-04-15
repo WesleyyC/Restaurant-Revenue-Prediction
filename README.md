@@ -120,6 +120,12 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./SVM/train.m
 - Name/Date: Wes 4/15/15
 
+15th
+- Combine the best result 1694820
+- Score: RMSE of ~1.7M on Kaggle as it is very close.
+- File: ./Combine/train.m
+- Name/Date: Wes 4/15/15
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
