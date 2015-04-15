@@ -113,6 +113,13 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Get Rid of Outline Continue/train.m
 - Name/Date: Wes 4/14/15
 
+14th
+- Support Vector approach, libvim linbrary, using linaer kenal
+- Did not tune any varaible.
+- Score: RMSE of ~1.8M on Kaggle.
+- File: ./SVM/train.m
+- Name/Date: Wes 4/15/15
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
