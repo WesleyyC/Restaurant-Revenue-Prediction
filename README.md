@@ -7,7 +7,7 @@ Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian
 
 ### To Do
 - SVM
-- Big/Other City retrain
+- Feature exploring
 
 
 ### Update README.md for each commit
