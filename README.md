@@ -115,10 +115,35 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 
 14th
 - Support Vector approach, libvim linbrary, using linaer kenal
-- Did not tune any varaible.
+- Try several tunning option, the score is not very impressive. Might move on and try something else.
 - Score: RMSE of ~1.8M on Kaggle.
 - File: ./SVM/train.m
 - Name/Date: Wes 4/15/15
+
+15th
+- Combine the best result 1694820
+- Score: RMSE of ~1.7M on Kaggle as it is very close.
+- File: ./Combine/train.m
+- Name/Date: Wes 4/15/15
+
+16th
+- Try to standardlize the data and retrain our best estimator
+- Score: slightly worse than our best
+- File: ./Get Rid of Outline Standrad/train.m
+- Name/Date: Wes 4/16/15
+
+17th
+- Boosting the our best result using fitlm/fitensemble.
+- Score: slightly worse than our best
+- File: ./Result Boosting/train.m
+- Name/Date: Wes 4/16/15
+
+17th
+- Adding gaussian noise to our result.
+- Score: slightly better than our originally best result
+- File: ./Add Noise/train.m
+- Name/Date: Wes 4/16/15
+- 
 
 ### Data Description
 #### File Description
