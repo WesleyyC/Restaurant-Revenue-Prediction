@@ -6,8 +6,8 @@ https://www.kaggle.com/c/restaurant-revenue-prediction/data
 Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian 
 
 ### To Do
-- SVM
 - Feature exploring
+- Decision Tree for Regression
 
 
 ### Update README.md for each commit
