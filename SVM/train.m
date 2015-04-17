@@ -6,6 +6,9 @@ trainRevenue = trainData(:, end:end);
 testData = csvread('str_num_test.csv',1,0);
 testFeatures=[testData(:,2),testData(:,4:end)];
 testLabelinput=zeros([100000,1]);
+
+
+
 %% Handle Outline
 
 for i = 1:length(trainRevenue)
@@ -16,11 +19,14 @@ for i = 1:length(trainRevenue)
     
 end
 
+%% Transfer it to classify
+trainRevenue=round(trainRevenue/0.5e6)*0.5e6;
+
 
 %% train svm
 
-model=svmtrain(trainRevenue,trainFeatures,'-s 4 -t 0');
+model=svmtrain(trainRevenue,trainFeatures);
 
 
 %% predict result
-[output, accuracy, decision_values] = svmpredict(testLabelinput, testFeatures, model);
+[output, accuracy, decision_values] = svmpredict(testLabelinput,testFeatures, model);

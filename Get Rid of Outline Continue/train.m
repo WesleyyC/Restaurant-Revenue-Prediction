@@ -10,18 +10,19 @@ testFeatures=[testData(:,2),testData(:,4:end)];
 
 for i = 1:length(trainRevenue)
     
-    if trainRevenue(i)>0.95e7
-        trainRevenue(i)=0.95e7;
+    if trainRevenue(i)>1.1e7
+        trainRevenue(i)=1.1e7;
     end
+    
     
 end
 
 
 %%
 kfold=5;
-%err=zeros([1,10]);
-%for m=1:10
-Ensemble = fitensemble(x2fx(trainFeatures, 'linear'), trainRevenue,'Bag', 600, 'Tree', 'Type', 'Regression','FResample', 1/2);
-%CVensembler = crossval(Ensemble, 'KFold', kfold);
-%err=kfoldLoss(CVensembler);
-%end
+% err=zeros([1,10]);
+% for m=1:10
+Ensemble = fitensemble(x2fx(trainFeatures, 'purequadratic'), trainRevenue,'Bag', 600, 'Tree', 'Type', 'Regression','FResample', 1/1);
+CVensembler = crossval(Ensemble, 'KFold', kfold);
+err=sqrt(kfoldLoss(CVensembler));
+% end
