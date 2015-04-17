@@ -138,7 +138,7 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Result Boosting/train.m
 - Name/Date: Wes 4/16/15
 
-17th
+18th
 - Adding gaussian noise to our result.
 - Score: slightly better than our originally best result
 - File: ./Add Noise/train.m
