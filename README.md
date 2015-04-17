@@ -126,6 +126,25 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Combine/train.m
 - Name/Date: Wes 4/15/15
 
+16th
+- Try to standardlize the data and retrain our best estimator
+- Score: slightly worse than our best
+- File: ./Get Rid of Outline Standrad/train.m
+- Name/Date: Wes 4/16/15
+
+17th
+- Boosting the our best result using fitlm/fitensemble.
+- Score: slightly worse than our best
+- File: ./Result Boosting/train.m
+- Name/Date: Wes 4/16/15
+
+17th
+- Adding gaussian noise to our result.
+- Score: slightly better than our originally best result
+- File: ./Add Noise/train.m
+- Name/Date: Wes 4/16/15
+- 
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
