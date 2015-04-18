@@ -145,6 +145,13 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - Name/Date: Wes 4/16/15
 - 
 
+19th
+- Boosting the our best result which gives us a slightly better result
+- Score: slightly worse than our best
+- File: ./Get Rid of Outline Categorical/train.m
+- Name/Date: Wes 4/16/15 
+
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
