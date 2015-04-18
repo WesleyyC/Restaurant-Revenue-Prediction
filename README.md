@@ -6,8 +6,8 @@ https://www.kaggle.com/c/restaurant-revenue-prediction/data
 Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian 
 
 ### To Do
-- SVM
 - Feature exploring
+- Decision Tree for Regression
 
 
 ### Update README.md for each commit
@@ -138,12 +138,23 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Result Boosting/train.m
 - Name/Date: Wes 4/16/15
 
-17th
+18th
 - Adding gaussian noise to our result.
 - Score: slightly better than our originally best result
 - File: ./Add Noise/train.m
 - Name/Date: Wes 4/16/15
-- 
+
+19th
+- Boosting the our best result which gives us a slightly better result
+- Score: slightly worse than our best
+- File: ./Get Rid of Outline Categorical/train.m
+- Name/Date: Wes 4/16/15 
+
+20th
+- Decision tree for regression
+- Score: 2.4M RMSE
+- File: ./Decision Tree for Regression/train.m
+- Name/Date: Wes 4/16/15 
 
 ### Data Description
 #### File Description
