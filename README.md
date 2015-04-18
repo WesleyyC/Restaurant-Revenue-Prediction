@@ -143,7 +143,6 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - Score: slightly better than our originally best result
 - File: ./Add Noise/train.m
 - Name/Date: Wes 4/16/15
-- 
 
 19th
 - Boosting the our best result which gives us a slightly better result
@@ -151,6 +150,11 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Get Rid of Outline Categorical/train.m
 - Name/Date: Wes 4/16/15 
 
+20th
+- Decision tree for regression
+- Score: 2.4M RMSE
+- File: ./Decision Tree for Regression/train.m
+- Name/Date: Wes 4/16/15 
 
 ### Data Description
 #### File Description
