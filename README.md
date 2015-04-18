@@ -156,6 +156,13 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Decision Tree for Regression/train.m
 - Name/Date: Wes 4/16/15 
 
+21st
+- Weka selects 8 features and use outline+fitensemble
+- The score is not as good, but 8 features can get us to 1.8M which is pretty good.
+- Score: 1.8M RMSE
+- File: ./Feautre Selection/train.m
+- Name/Date: Wes 4/17/15 
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
