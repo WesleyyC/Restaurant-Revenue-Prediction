@@ -3,6 +3,12 @@
 ##############
 
 
+UNDER CONSTRUCTION: 
+	Grid Search
+	Gradient Boost
+	LogitBoost
+
+
 Methods
 
 
@@ -13,4 +19,8 @@ Methods
 
 (2) AdaBoost
 	RMSE : 2.4M
-	Comments: Good performance. Will try improving.
+	Comments: Better performance. Will try improving.
+
+
+(3) BaggingRegressor
+	RMSE : 2.6M

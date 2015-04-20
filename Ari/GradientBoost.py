@@ -44,6 +44,7 @@ y = df_train["revenue"].values #target
 
 ### AdaBoost ###
 
+from sklearn import ensemble
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import AdaBoostRegressor
 from sklearn.preprocessing import StandardScaler
@@ -54,8 +55,8 @@ kf = KFold(len(y), n_folds=15, shuffle=True)
 y_pred1 = np.zeros(len(y), dtype=y.dtype) # where we'll accumulate predictions
 y_pred2 = np.zeros(len(y), dtype=y.dtype) # where we'll accumulate predictions
 
-clf_1 = DecisionTreeRegressor(max_depth=4)
-clf_2 = AdaBoostRegressor(DecisionTreeRegressor(max_depth=4),
+clf_1 = ensemble.GradientBoostingClassifier()
+clf_2 = AdaBoostRegressor(ensemble.GradientBoostingClassifier(),
                          n_estimators=50, random_state=None)
 
 
@@ -85,12 +86,12 @@ plt.show()
 r2_score(y, y_pred1)
 rmse = sqrt(mean_squared_error(y, y_pred1))
 
-print "Linear Regression CV 1 rmse: " , rmse
+print "GradientBoostingClassifier CV 1 rmse: " , rmse
 
 
-plot_r2(y, y_pred2, "Performance of CV AdaBoost")
+plot_r2(y, y_pred2, "Performance of CV GradientBoosting")
 plt.show()
 r2_score(y, y_pred2)
 rmse = sqrt(mean_squared_error(y, y_pred2))
 
-print "Linear Regression CV 2 rmse: " , rmse
+print "GradientBoosting CV rmse: " , rmse
