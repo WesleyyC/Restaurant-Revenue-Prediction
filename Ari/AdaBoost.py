@@ -59,7 +59,6 @@ test_feats = test_feats.drop("P35", axis=1)
 test_feats = test_feats.drop("P36", axis=1)
 test_feats = test_feats.drop("P37", axis=1)
 
-
 ### Pre-process training data ###
 
 df_train = pd.read_csv("train.csv")
@@ -92,34 +91,32 @@ feats = feats.drop("P34", axis=1)
 feats = feats.drop("P35", axis=1)
 feats = feats.drop("P36", axis=1)
 feats = feats.drop("P37", axis=1)
+
+
 X = feats.values #features
 y = df_train["revenue"].values #target
 
-
-
 for i in range(0, len(y)-1):
-    if y[i]>10000000:
+    if y[i]>9000000:
         print "sdfjsd"
-        y[i]=10000000
+        y[i]=9000000
 
 
 ### AdaBoost ###
 
 from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import BaggingRegressor
+from sklearn.ensemble import AdaBoostRegressor
 from sklearn.preprocessing import StandardScaler
 
 
 kf = KFold(len(y), n_folds=15, shuffle=True)
 
+y_pred1 = np.zeros(len(y), dtype=y.dtype) # where we'll accumulate predictions
 y_pred2 = np.zeros(len(y), dtype=y.dtype) # where we'll accumulate predictions
 
-clf_2 = BaggingRegressor(base_estimator=None, n_estimators=120, 
-    #max_samples=1.0, max_features=1.0, 
-    bootstrap=True, 
-    bootstrap_features=True, oob_score=False, n_jobs=10000, 
-    random_state=None, verbose=0)
-
+clf_1 = DecisionTreeRegressor(max_depth=4)
+clf_2 = AdaBoostRegressor(DecisionTreeRegressor(max_depth=4),
+                         n_estimators=10, random_state=None)
 
 
 
@@ -131,12 +128,22 @@ for train_index, test_index in kf:
 
     t = StandardScaler()
     X_train = t.fit_transform(X_train)
+    clf_1.fit(X_train, y_train) # Train clf_1 on the training data
     clf_2.fit(X_train, y_train) # Train clf_2 on the training data
 
 
     X_test = t.transform(X_test)
+    y_pred1[test_index] = clf_1.predict(X_test) # Predict clf_1 using the test and store in y_pred
     y_pred2[test_index] = clf_2.predict(X_test) # Predict clf_2 using the test and store in y_pred
     
+
+#plot_r2(y, y_pred1, "Performance of CV DecisionTreeRegressor")
+#plt.show()
+r2_score(y, y_pred1)
+rmse = sqrt(mean_squared_error(y, y_pred1))
+
+print "DecisionTreeRegressor RMSE: " , rmse
+
 
 ### Prediction ###
 result = clf_2.predict(test_feats)
@@ -144,10 +151,10 @@ result = np.asarray(result)
 np.savetxt("result.csv", result, delimiter=",")
 
 rmse = sqrt(mean_squared_error(y, y_pred2))
-print "Bagging RMSE: " , rmse
+print "AdaBoost RMSE: " , rmse
 
-plot_r2(y, y_pred2, "Performance of Bagging")
-#plt.show()
+plot_r2(y, y_pred2, "Performance of AdaBoost")
+plt.show()
 r2_score(y, y_pred2)
 
 
