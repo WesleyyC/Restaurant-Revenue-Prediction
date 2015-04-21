@@ -1,4 +1,6 @@
+#### 15 BEST ####
 
+>> train
 feats = feats.drop("Bit City", axis=1)
 feats = feats.drop("Type", axis=1)
 feats = feats.drop("P3", axis=1)
@@ -26,3 +28,50 @@ feats = feats.drop("P34", axis=1)
 feats = feats.drop("P35", axis=1)
 feats = feats.drop("P36", axis=1)
 feats = feats.drop("P37", axis=1)
+# stop here for best 15
+feats = feats.drop("City", axis=1)
+feats = feats.drop("P5", axis=1)
+feats = feats.drop("P4", axis=1)
+feats = feats.drop("P23", axis=1)
+feats = feats.drop("P29", axis=1)
+# best 10
+
+
+>> test
+
+test_feats = df_test.drop("Bit City", axis=1)
+test_feats = test_feats.drop("Type", axis=1)
+test_feats = test_feats.drop("P3", axis=1)
+test_feats = test_feats.drop("P7", axis=1)
+test_feats = test_feats.drop("P8", axis=1)
+test_feats = test_feats.drop("P9", axis=1)
+test_feats = test_feats.drop("P10", axis=1)
+test_feats = test_feats.drop("P12", axis=1)
+test_feats = test_feats.drop("P13", axis=1)
+test_feats = test_feats.drop("P14", axis=1)
+test_feats = test_feats.drop("P15", axis=1)
+test_feats = test_feats.drop("P16", axis=1)
+test_feats = test_feats.drop("P17", axis=1)
+test_feats = test_feats.drop("P18", axis=1)
+test_feats = test_feats.drop("P21", axis=1)
+test_feats = test_feats.drop("P24", axis=1)
+test_feats = test_feats.drop("P25", axis=1)
+test_feats = test_feats.drop("P26", axis=1)
+test_feats = test_feats.drop("P27", axis=1)
+test_feats = test_feats.drop("P30", axis=1)
+test_feats = test_feats.drop("P31", axis=1)
+test_feats = test_feats.drop("P32", axis=1)
+test_feats = test_feats.drop("P33", axis=1)
+test_feats = test_feats.drop("P34", axis=1)
+test_feats = test_feats.drop("P35", axis=1)
+test_feats = test_feats.drop("P36", axis=1)
+test_feats = test_feats.drop("P37", axis=1)
+# stop here for best 15
+test_feats = test_feats.drop("City", axis=1)
+test_feats = test_feats.drop("P5", axis=1)
+test_feats = test_feats.drop("P4", axis=1)
+test_feats = test_feats.drop("P23", axis=1)
+test_feats = test_feats.drop("P29", axis=1)
+# best 10
+
+

@@ -58,14 +58,15 @@ test_feats = test_feats.drop("P34", axis=1)
 test_feats = test_feats.drop("P35", axis=1)
 test_feats = test_feats.drop("P36", axis=1)
 test_feats = test_feats.drop("P37", axis=1)
+# stop here for best 15
 
 
 ### Pre-process training data ###
 
 df_train = pd.read_csv("train.csv")
 df_train.head()
-feats = df_train.drop("revenue", axis=1) 
-feats = feats.drop("Bit City", axis=1)
+feats = df_train.drop("Bit City", axis=1)
+feats = feats.drop("revenue", axis=1)
 feats = feats.drop("Type", axis=1)
 feats = feats.drop("P3", axis=1)
 feats = feats.drop("P7", axis=1)
@@ -92,6 +93,9 @@ feats = feats.drop("P34", axis=1)
 feats = feats.drop("P35", axis=1)
 feats = feats.drop("P36", axis=1)
 feats = feats.drop("P37", axis=1)
+# stop here for best 15
+
+
 X = feats.values #features
 y = df_train["revenue"].values #target
 
@@ -99,7 +103,6 @@ y = df_train["revenue"].values #target
 
 for i in range(0, len(y)-1):
     if y[i]>10000000:
-        print "sdfjsd"
         y[i]=10000000
 
 
