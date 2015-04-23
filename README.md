@@ -163,6 +163,12 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Feautre Selection/train.m
 - Name/Date: Wes 4/17/15 
 
+22st
+- Instead of setting boundary, we creating extra variable to flag the outliner.
+- Score: 1.8M RMSE
+- File: ./Flag Outliner/train.m
+- Name/Date: Wes 4/19/15 
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
