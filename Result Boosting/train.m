@@ -25,8 +25,8 @@ end
 
 %%
 
-Ensemble = fitensemble(x2fx(trainFeatures, 'quadratic'), trainRevenue,'Bag', 600, 'Tree', 'Type', 'Regression');
-CVensembler = crossval(Ensemble, 'KFold',5);
-plot(kfoldLoss(CVensembler,'mode','cumulative'));
+Ensemble = fitensemble(x2fx(trainFeatures, 'quadratic'), trainRevenue,'Bag', 1000, 'Tree', 'Type', 'Regression');
+CVensembler = crossval(Ensemble, 'KFold',10);
+sqrt(kfoldLoss(CVensembler));
 
 

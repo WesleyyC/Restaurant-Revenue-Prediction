@@ -1,10 +1,10 @@
 
 trainData = csvread('str_num_train.csv',1,0);
-trainFeatures = trainData(:,[2,3,5,7,16,18,26,34]);
-trainRevenue = trainData(:, end:end);
+trainFeatures=trainData(:,[2,3,6,7,22,25,28,33]);
+trainRevenue = trainData(:, end);
 
 testData = csvread('str_num_test.csv',1,0);
-testFeatures=testData(:,[2,3,5,7,16,18,26,34]);
+testFeatures=testData(:,[2,3,6,7,22,25,28,33]);
 
 %% Handle Outline
 
@@ -22,7 +22,12 @@ end
 kfold=5;
 % err=zeros([1,10]);
 % for m=1:10
-Ensemble = fitensemble(x2fx(trainFeatures, 'linear'), trainRevenue,'Bag', 600, 'Tree', 'Type', 'Regression');
+Ensemble = fitensemble(x2fx(trainFeatures,'quadratic'), trainRevenue,'Bag', 5000, 'Tree', 'Type', 'Regression');
+
 CVensembler = crossval(Ensemble, 'KFold', kfold);
-err=sqrt(kfoldLoss(CVensembler));
+plot(kfoldLoss(CVensembler,'mode','cumulative'));
+sqrt(kfoldLoss(CVensembler))
+
 % end
+
+
