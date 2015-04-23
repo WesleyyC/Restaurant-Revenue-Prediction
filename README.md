@@ -7,6 +7,7 @@ Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian
 
 ### To Do
 - Regerssion Tree with new data and weight for data.
+- Deep Network
 
 ### Update README.md for each commit
 - What approach you use?
