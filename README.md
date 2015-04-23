@@ -6,9 +6,7 @@ https://www.kaggle.com/c/restaurant-revenue-prediction/data
 Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian 
 
 ### To Do
-- Feature exploring
-- Decision Tree for Regression
-
+- Regerssion Tree with new data and weight for data.
 
 ### Update README.md for each commit
 - What approach you use?
