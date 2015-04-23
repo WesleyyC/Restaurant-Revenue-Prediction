@@ -47,4 +47,4 @@ end
 %%
 predictor_apply = fitensemble(x2fx(trainFeatures(:,C(i,:)),'interaction'), trainRevenue,  ...
 'Bag', NLearn, 'Tree', 'Type', 'Regression');
-mse = sqrt(loss(predictor_apply,x2fx(trainFeatures(:,C(i,:)),'interaction'),
+mse = sqrt(loss(predictor_apply,x2fx(trainFeatures(:,C(i,:)),'interaction')))
