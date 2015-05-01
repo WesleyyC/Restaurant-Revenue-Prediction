@@ -160,4 +160,25 @@ r2_score(y, y_pred2)
 
 
 
+# Plotting function 
+
+from matplotlib import pyplot as plt
+from sklearn.metrics import r2_score
+
+def plot_r2(y, y_pred, title):
+    plt.figure(figsize=(10, 6))
+    plt.grid()
+    plt.scatter(y, y_pred, marker='.')
+    plt.xlabel("Actual Target"); plt.ylabel("Predicted Target")
+    plt.title(title)
+    xmn, xmx = plt.xlim()
+    ymn, ymx = plt.ylim()
+    mx = max(xmx, ymx) 
+    buff = mx * .1
+    plt.text(xmn + buff, mx - buff, "R2 Score: %f" % (r2_score(y, y_pred), ), size=15)
+    plt.plot([0., mx], [0., mx])
+    plt.xlim(xmn, mx)
+    plt.ylim(ymn, mx)
+
+
 
