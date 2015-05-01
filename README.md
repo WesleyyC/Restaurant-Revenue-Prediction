@@ -6,9 +6,8 @@ https://www.kaggle.com/c/restaurant-revenue-prediction/data
 Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian 
 
 ### To Do
-- Feature exploring
-- Decision Tree for Regression
-
+- Regerssion Tree with new data and weight for data.
+- Deep Network
 
 ### Update README.md for each commit
 - What approach you use?
@@ -162,6 +161,12 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - Score: 1.8M RMSE
 - File: ./Feautre Selection/train.m
 - Name/Date: Wes 4/17/15 
+
+22st
+- Instead of setting boundary, we creating extra variable to flag the outliner.
+- Score: 1.8M RMSE
+- File: ./Flag Outliner/train.m
+- Name/Date: Wes 4/19/15 
 
 ### Data Description
 #### File Description
