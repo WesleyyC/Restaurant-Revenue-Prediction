@@ -10,8 +10,8 @@ testFeatures=[testData(:,2),testData(:,4:end)];
 
 for i = 1:length(trainRevenue)
     
-    if trainRevenue(i)>1.1e7
-        trainRevenue(i)=1.1e7;
+    if trainRevenue(i)>1e7
+        trainRevenue(i)=1e7;
     end
     
 end

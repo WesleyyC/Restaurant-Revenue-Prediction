@@ -3,7 +3,7 @@
 result = csvread('submit_boost.csv',1,1);
 
 
-output=result+randn(size(result))*5e3;
+output=result-5e4+randn(size(result))*1000;
 
 output=int64(output);
 
