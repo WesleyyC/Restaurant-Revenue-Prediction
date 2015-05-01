@@ -29,75 +29,45 @@ def plot_r2(y, y_pred, title):
 
 ### Preprocess Testing Data ###
 
-df_test = pd.read_csv("test.csv")
-df_test.head()
-test_feats = df_test.drop("Bit City", axis=1)
-test_feats = test_feats.drop("Type", axis=1)
-test_feats = test_feats.drop("P3", axis=1)
-test_feats = test_feats.drop("P7", axis=1)
-test_feats = test_feats.drop("P8", axis=1)
-test_feats = test_feats.drop("P9", axis=1)
-test_feats = test_feats.drop("P10", axis=1)
-test_feats = test_feats.drop("P12", axis=1)
-test_feats = test_feats.drop("P13", axis=1)
-test_feats = test_feats.drop("P14", axis=1)
-test_feats = test_feats.drop("P15", axis=1)
-test_feats = test_feats.drop("P16", axis=1)
-test_feats = test_feats.drop("P17", axis=1)
-test_feats = test_feats.drop("P18", axis=1)
-test_feats = test_feats.drop("P21", axis=1)
-test_feats = test_feats.drop("P24", axis=1)
-test_feats = test_feats.drop("P25", axis=1)
-test_feats = test_feats.drop("P26", axis=1)
-test_feats = test_feats.drop("P27", axis=1)
-test_feats = test_feats.drop("P30", axis=1)
-test_feats = test_feats.drop("P31", axis=1)
-test_feats = test_feats.drop("P32", axis=1)
-test_feats = test_feats.drop("P33", axis=1)
-test_feats = test_feats.drop("P34", axis=1)
-test_feats = test_feats.drop("P35", axis=1)
-test_feats = test_feats.drop("P36", axis=1)
-test_feats = test_feats.drop("P37", axis=1)
-# stop here for best 15
-
-
 ### Pre-process training data ###
 
 df_train = pd.read_csv("train.csv")
 df_train.head()
-feats = df_train.drop("Bit City", axis=1)
-feats = feats.drop("revenue", axis=1)
-feats = feats.drop("Type", axis=1)
-feats = feats.drop("P3", axis=1)
-feats = feats.drop("P7", axis=1)
-feats = feats.drop("P8", axis=1)
-feats = feats.drop("P9", axis=1)
-feats = feats.drop("P10", axis=1)
-feats = feats.drop("P12", axis=1)
-feats = feats.drop("P13", axis=1)
-feats = feats.drop("P14", axis=1)
-feats = feats.drop("P15", axis=1)
-feats = feats.drop("P16", axis=1)
-feats = feats.drop("P17", axis=1)
-feats = feats.drop("P18", axis=1)
-feats = feats.drop("P21", axis=1)
-feats = feats.drop("P24", axis=1)
-feats = feats.drop("P25", axis=1)
-feats = feats.drop("P26", axis=1)
-feats = feats.drop("P27", axis=1)
-feats = feats.drop("P30", axis=1)
-feats = feats.drop("P31", axis=1)
-feats = feats.drop("P32", axis=1)
-feats = feats.drop("P33", axis=1)
-feats = feats.drop("P34", axis=1)
-feats = feats.drop("P35", axis=1)
-feats = feats.drop("P36", axis=1)
-feats = feats.drop("P37", axis=1)
+feats = df_train
+print feats.head()
+feats = feats.drop("1", axis=1)
+feats = feats.drop("6", axis=1)
+feats = feats.drop("7", axis=1)
+feats = feats.drop("8", axis=1)
+feats = feats.drop("10", axis=1)
+feats = feats.drop("11", axis=1)
+feats = feats.drop("12", axis=1)
+feats = feats.drop("13", axis=1)
+feats = feats.drop("15", axis=1)
+feats = feats.drop("17", axis=1)
+feats = feats.drop("18", axis=1)
+feats = feats.drop("19", axis=1)
+feats = feats.drop("21", axis=1)
+feats = feats.drop("22", axis=1)
+feats = feats.drop("26", axis=1)
+feats = feats.drop("27", axis=1)
+feats = feats.drop("29", axis=1)
+feats = feats.drop("30", axis=1)
+feats = feats.drop("32", axis=1)
+feats = feats.drop("33", axis=1)
+feats = feats.drop("34", axis=1)
+feats = feats.drop("36", axis=1)
+feats = feats.drop("37", axis=1)
+feats = feats.drop("38", axis=1)
+feats = feats.drop("39", axis=1)
+feats = feats.drop("40", axis=1)
+feats = feats.drop("41", axis=1)
+feats = feats.drop("42", axis=1)
 # stop here for best 15
 
 
 X = feats.values #features
-y = df_train["revenue"].values #target
+y = df_train["42"].values #target
 
 
 
@@ -106,21 +76,30 @@ for i in range(0, len(y)-1):
         y[i]=10000000
 
 
-### AdaBoost ###
+
+df_test = pd.read_csv("test.csv")
+df_test.head()
+test_feats = df_test
+print feats.head()
+# stop here for best 15
+
+
+
+### Bagging ###
 
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import BaggingRegressor
 from sklearn.preprocessing import StandardScaler
 
 
-kf = KFold(len(y), n_folds=15, shuffle=True)
+kf = KFold(len(y), n_folds=100, shuffle=True)
 
 y_pred2 = np.zeros(len(y), dtype=y.dtype) # where we'll accumulate predictions
 
-clf_2 = BaggingRegressor(base_estimator=None, n_estimators=120, 
+clf_2 = BaggingRegressor(base_estimator=None, n_estimators=15, 
     #max_samples=1.0, max_features=1.0, 
     bootstrap=True, 
-    bootstrap_features=True, oob_score=False, n_jobs=10000, 
+    bootstrap_features=True, oob_score=False, n_jobs=600, 
     random_state=None, verbose=0)
 
 
@@ -139,21 +118,19 @@ for train_index, test_index in kf:
 
     X_test = t.transform(X_test)
     y_pred2[test_index] = clf_2.predict(X_test) # Predict clf_2 using the test and store in y_pred
-    
+    print "q"
 
+
+print "x"
 ### Prediction ###
 result = clf_2.predict(test_feats)
 result = np.asarray(result)
 np.savetxt("result.csv", result, delimiter=",")
-
+print "y"
 rmse = sqrt(mean_squared_error(y, y_pred2))
 print "Bagging RMSE: " , rmse
 
 plot_r2(y, y_pred2, "Performance of Bagging")
 #plt.show()
 r2_score(y, y_pred2)
-
-
-
-
 

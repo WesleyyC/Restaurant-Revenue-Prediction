@@ -1,14 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.ensemble import ExtraTreesRegressor
 
-
-### Preprocess Testing Data ###
-
-df_test = pd.read_csv("test.csv")
-df_test.head()
-test_feats = df_test
 
 ### Pre-process training data ###
 
@@ -20,7 +14,7 @@ y = df_train["revenue"].values #target
 
 
 # Build a forest and compute the feature importances
-forest = ExtraTreesClassifier(n_estimators=250,
+forest = ExtraTreesRegressor(n_estimators=250,
                               random_state=0)
 
 forest.fit(X, y)
