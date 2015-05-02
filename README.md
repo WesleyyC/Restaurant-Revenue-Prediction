@@ -168,6 +168,16 @@ categorical.  Tried on training partition of first 120 rows and tested model on 
 - File: ./Flag Outliner/train.m
 - Name/Date: Wes 4/19/15 
 
+23st
+- Boosting our best result with feature (kill owl.csv) selection from
+- https://www.kaggle.com/users/20758/down-under-wonder/restaurant-revenue-prediction/boruta-random-forest-benchmark-1
+- Score: Currently Best
+- File: ./Result Boosting/train.m
+- Name/Date: Wes 4/19/15 
+
+
+https://www.kaggle.com/users/20758/down-under-wonder/restaurant-revenue-prediction/boruta-random-forest-benchmark-1
+
 ### Data Description
 #### File Description
 - train.csv: the training set. Use this dataset for training your model. 
