@@ -1,9 +1,9 @@
 
 
-result = csvread('submit_boost.csv',1,1);
+result = csvread('kill wol.csv',1,1);
 
 
-output=result-5e4+randn(size(result))*1000;
+output=result+randn(size(result))*100;
 
 output=int64(output);
 
