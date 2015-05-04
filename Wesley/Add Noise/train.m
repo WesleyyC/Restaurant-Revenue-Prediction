@@ -1,9 +1,9 @@
 
 
-result = csvread('kill wol.csv',1,1);
+result = csvread('5.csv',1,1);
 
 
-output=result+randn(size(result))*100;
+output=result-1000;
 
 output=int64(output);
 
