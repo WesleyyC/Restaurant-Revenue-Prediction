@@ -11,8 +11,6 @@ Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian
 
 Top 2%：47th/2340
 
-https://www.kaggle.com/c/restaurant-revenue-prediction/leaderboard/private
-
 ### Approach Records
 
 The models we build is seperated by folders, more detail will come soon.
