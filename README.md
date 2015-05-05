@@ -5,11 +5,13 @@ https://www.kaggle.com/c/restaurant-revenue-prediction
 
 Team: WaW
 
+Write-Up: https://docs.google.com/document/d/1KU-uzsLLz53S7SwKKnEjk6olbyGaEYRHjF-zv-5HuMk/edit?usp=sharing
+
 Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian 
 
 ### Final Rank
 
-Top 2%：47th/2340
+Rank: 43th/2340 (about top 2%)
 
 ### Approach Records
 
