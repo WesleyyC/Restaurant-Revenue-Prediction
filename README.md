@@ -9,11 +9,11 @@ Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian
 
 ### Final Rank
 
-Top 2%：47/2340
+Top 2%：47th/2340
 
 ### Approach Records
 
-The models we build is seperated by folders.
+The models we build is seperated by folders, more detail will come soon.
 
 ### Data Description
 #### File Description
