@@ -5,6 +5,10 @@ https://www.kaggle.com/c/restaurant-revenue-prediction/data
 
 Author: Ari Ben-Elazar, Will Burstein, Wesley Wei Qian 
 
+### Final Rank
+
+Top 2%：47/2340
+
 ### Approach Records
 
 The models we build is seperated by folders.
