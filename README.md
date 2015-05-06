@@ -1,7 +1,6 @@
-# RestaurantRevenuePrediction
-Term project for COSI 123A Statistical Machine Learning Course @ Brandeis Univeristy 
+# Kaggle: Restaurant Revenue Prediction
 
-https://www.kaggle.com/c/restaurant-revenue-prediction
+Competition Detail: https://www.kaggle.com/c/restaurant-revenue-prediction
 
 Write-Up: https://docs.google.com/document/d/1KU-uzsLLz53S7SwKKnEjk6olbyGaEYRHjF-zv-5HuMk/edit?usp=sharing
 
