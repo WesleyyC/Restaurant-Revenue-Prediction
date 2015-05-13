@@ -25,11 +25,16 @@ def plot_r2(y, y_pred, title):
     plt.ylim(ymn, mx)
 
 
-df = pd.read_csv("num_feats.csv")
-df2 = pd.read_csv("str_num_test.csv")
-y = df["revenue"]
-for i in range(0, 41):
+df = pd.read_csv("test.csv")
+df2 = pd.read_csv("train.csv")
+for i in range(1, 2):
     x = df[str(i)]
+    y = df[str(3)]
     title = "Feature #", i
+    plot_r2(x, y, title)
+    plt.show()
+    x = 100*df[str(i)]
+    y = df[str(3)]
+    title = "100 Feature #", i
     plot_r2(x, y, title)
     plt.show()
